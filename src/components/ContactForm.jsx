@@ -8,9 +8,9 @@ const ContactForm = () => {
   
   // 联系信息数据
   const contactInfo = {
-    address: "上海市浦东新区陆家嘴金融中心88号",
-    phone: "+86 21 5888 xxxx",
-    email: "contact@ivfguide.com",
+    address: "江苏省昆山市紫竹路699号",
+    phone: "+86 13912655230",
+    email: "fuzhushengzhi@gmail.com",
     workingHours: "周一至周五: 9:00 - 18:00"
   };
   

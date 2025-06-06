@@ -48,7 +48,7 @@ const HeroSlider = () => {
       title: "全程中文服务团队",
       subtitle: "无障碍沟通体验",
       description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦的那一刻起，您将享受到如同在国内的无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
-      image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da333.jpg",
+      image: "https://photo.171006.xyz/fuzhushengzhi/F02d-HLaEAYB_UV.jpeg",
       btnText: "了解团队",
       targetSection: "team"
     },
@@ -57,7 +57,7 @@ const HeroSlider = () => {
       title: "合法安心，隐私保障",
       subtitle: "法律与隐私双重保障",
       description: "吉尔吉斯斯坦是少数合法允许代孕和试管婴儿的国家之一，法律框架完善且稳定。我们严格遵循当地法规，提供100%合法服务。同时，我们采用严格的隐私保护措施，所有客户信息绝对保密，合同和协议均有法律效力，确保您的权益和隐私得到全面保障。",
-      image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da433.jpg",
+      image: "https://photo.171006.xyz/photo/20230530104931.png",
       btnText: "了解政策",
       targetSection: "visa-guide"
     }
