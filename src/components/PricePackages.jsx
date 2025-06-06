@@ -132,7 +132,7 @@ const PricePackages = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
-            吉尔吉斯斯坦服务套餐价格
+            唐IVF 服务套餐价格
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             透明的收费标准，全程无隐形消费

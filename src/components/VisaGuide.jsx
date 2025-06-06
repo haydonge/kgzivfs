@@ -1,30 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Clock, BookOpen, Download } from 'lucide-react';
+import { FileText, Clock, BookOpen, Download, Globe } from 'lucide-react';
 
 const VisaGuide = () => {
-  // 签证攻略数据
+  // 吉尔吉斯斯坦签证攻略数据
   const visaGuides = [
     {
       icon: <FileText />,
-      title: "泰国医疗签证",
-      description: "泰国医疗签证申请流程与所需材料详解",
-      time: "处理时间：5-7个工作日",
-      features: ["可停留60天", "可延期30天", "无需面试"]
+      title: "电子旅游签证",
+      description: "中国公民可在线申请吉尔吉斯斯坦电子签证，无需前往使馆",
+      time: "处理时间：3个工作日",
+      features: ["可停留60天", "在线申请", "无需面试"]
     },
     {
-      icon: <FileText />,
-      title: "美国医疗签证",
-      description: "美国B-2医疗签证申请技巧与注意事项",
-      time: "处理时间：2-4周",
-      features: ["可停留6个月", "可延期6个月", "需面试"]
-    },
-    {
-      icon: <FileText />,
-      title: "乌克兰医疗签证",
-      description: "乌克兰医疗旅游签证快速办理指南",
+      icon: <Globe />,
+      title: "医疗签证",
+      description: "专为医疗旅游者设计的签证类型，提供更长停留期",
       time: "处理时间：3-5个工作日",
-      features: ["可停留90天", "可多次入境", "免面试"]
+      features: ["可停留90天", "可延期", "适合试管婴儿客户"]
+    },
+    {
+      icon: <FileText />,
+      title: "吉尔吉斯国家概况",
+      description: "位于中亚的美丽国家，拥有丰富的自然资源和友好的签证政策",
+      time: "地理：中亚山国",
+      features: ["首都：比什凯克", "语言：吉尔吉斯语、俄语", "对华友好"]
     }
   ];
 
@@ -41,10 +41,10 @@ const VisaGuide = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
-            签证攻略
+            吉尔吉斯斯坦签证指南
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            为您提供赴各国进行试管婴儿的签证办理指南
+            便捷的电子签证系统，让您轻松踏上试管婴儿之旅
           </p>
         </motion.div>
         

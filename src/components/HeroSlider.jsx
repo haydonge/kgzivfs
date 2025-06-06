@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-scroll';
 
 // 英雄轮播图组件
 const HeroSlider = () => {
@@ -12,7 +13,8 @@ const HeroSlider = () => {
       subtitle: "圆您家庭梦想",
       description: "提供高质量代孕及试管婴儿服务，由具有20年经验的中国医生团队全程操作，确保95%以上的成功率。我们拥有现代化医疗设施，采用先进技术，为您提供安全、可靠、透明的一站式服务，让每一位客户安心无忧。",
       image: "https://photo.171006.xyz/ZRtwrNCegKfzttuQToGyh.jpg",
-      btnText: "查看套餐"
+      btnText: "查看套餐",
+      targetSection: "prices"
     },
     {
       id: 2,
@@ -20,7 +22,8 @@ const HeroSlider = () => {
       subtitle: "先进医疗保障",
       description: "采用国际领先的第三代试管婴儿技术(PGD/PGS)，可筛查23对染色体异常及200多种遗传疾病，大幅提高妊娠率并降低流产率。我们的中国资深医生团队拥有多年国际执业经验，使用先进设备和技术为您打造健康家庭。",
       image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da233.jpg",
-      btnText: "技术详情"
+      btnText: "技术详情",
+      targetSection: "medical-process"
     },
     {
       id: 3,
@@ -28,7 +31,8 @@ const HeroSlider = () => {
       subtitle: "无忧全程陪护",
       description: "从初次咨询到宝宝回国，我们提供360°全方位服务：专业医疗咨询、合法合规签约、先进试管技术、严格代孕妈妈筛选（含体检、心理评估、背景调查）、全程孕期监控、24小时医疗陪护、出生证明和旅行证件办理，确保您的整个旅程舒适无忧。",
       image: "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      btnText: "联系我们"
+      btnText: "联系我们",
+      targetSection: "contact"
     },
     {
       id: 4,
@@ -36,7 +40,8 @@ const HeroSlider = () => {
       subtitle: "高性价比选择",
       description: "我们严格筛选20-28岁健康卵妹，所有卵妹均经过全面体检（包括遗传病史、生育能力评估）、心理评估和背景调查。提供卵子基因检测、冷冻保存、运输和移植全流程服务，多种方案可选。每位卵妹不超过3次捐卵，确保卵子质量和健康。",
       image: "https://photo.171006.xyz/BnhlQFV9saUfFbiAJizbp.jpg",
-      btnText: "咨询详情"
+      btnText: "咨询详情",
+      targetSection: "services"
     },
     {
       id: 5,
@@ -44,7 +49,8 @@ const HeroSlider = () => {
       subtitle: "无障碍沟通体验",
       description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦的那一刻起，您将享受到如同在国内的无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
       image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da333.jpg",
-      btnText: "了解团队"
+      btnText: "了解团队",
+      targetSection: "team"
     },
     {
       id: 6,
@@ -52,7 +58,8 @@ const HeroSlider = () => {
       subtitle: "法律与隐私双重保障",
       description: "吉尔吉斯斯坦是少数合法允许代孕和试管婴儿的国家之一，法律框架完善且稳定。我们严格遵循当地法规，提供100%合法服务。同时，我们采用严格的隐私保护措施，所有客户信息绝对保密，合同和协议均有法律效力，确保您的权益和隐私得到全面保障。",
       image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da433.jpg",
-      btnText: "了解政策"
+      btnText: "了解政策",
+      targetSection: "visa-guide"
     }
   ];
 
@@ -79,6 +86,17 @@ const HeroSlider = () => {
 
   return (
     <section id="home" className="relative h-screen overflow-hidden bg-slate-900">
+      {/* 二维码浮动元素 */}
+      <div className="absolute right-24 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
+        <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-xl">
+          <img 
+            src="https://photo.171006.xyz/QR1.png" 
+            alt="联系方式二维码" 
+            className="w-32 h-72 object-cover" 
+          />
+          <p className="text-center mt-2 text-gray-700 font-medium text-sm">扫码咨询</p>
+        </div>
+      </div>
       {/* 背景轮播图 */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -118,13 +136,27 @@ const HeroSlider = () => {
             </p>
             
             <div className="flex flex-wrap gap-6">
-              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors">
+              <Link
+                to={slides[current].targetSection}
+                spy={true}
+                smooth={true}
+                duration={800}
+                offset={-100}
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors cursor-pointer"
+              >
                 {slides[current].btnText} 
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-colors">
+              </Link>
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={800}
+                offset={-100}
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-colors cursor-pointer"
+              >
                 预约咨询
-              </button>
+              </Link>
             </div>
           </motion.div>
         </AnimatePresence>
