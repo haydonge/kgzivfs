@@ -54,17 +54,29 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-6">联系我们</h4>
             <address className="not-italic">
-              <p className="text-slate-400 mb-2">上海市浦东新区陆家嘴金融中心88号</p>
-              <p className="text-slate-400 mb-2">+86 21 5888 xxxx</p>
-              <p className="text-slate-400 mb-4">contact@ivfguide.com</p>
+              <p className="text-slate-400 mb-2">江苏省昆山市紫竹路669</p>
+              <p className="text-slate-400 mb-2">+86 13912655230</p>
+              <p className="text-slate-400 mb-4">fuzhushengzhi@gmail.com</p>
             </address>
             <div className="flex space-x-4">
-              <button className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors">
+              <a 
+                href="https://wa.me/8613912655230" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors"
+                title="WhatsApp联系我们"
+              >
                 <Phone className="w-4 h-4 text-slate-400" />
-              </button>
-              <button className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors">
+              </a>
+              <a 
+                href="https://kgzivf.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-colors"
+                title="访问我们的网站"
+              >
                 <Globe className="w-4 h-4 text-slate-400" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

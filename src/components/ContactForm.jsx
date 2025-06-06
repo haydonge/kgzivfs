@@ -205,9 +205,9 @@ const ContactForm = () => {
             
             <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-xl shadow-lg text-white">
               <h3 className="text-xl font-bold mb-4">免费咨询热线</h3>
-              <p className="text-lg font-medium mb-2">400-888-XXXX</p>
+              <p className="text-lg font-medium mb-2">13912655230</p>
               <p className="text-sm text-indigo-200">
-                工作日 9:00-18:00，欢迎来电咨询
+                工作日 9:00-22:00，欢迎来电咨询
               </p>
             </div>
           </motion.div>
