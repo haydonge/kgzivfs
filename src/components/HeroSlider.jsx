@@ -21,7 +21,7 @@ const HeroSlider = () => {
       title: "二代/三代试管婴儿技术",
       subtitle: "先进医疗保障",
       description: "采用国际领先的第三代试管婴儿技术(PGD/PGS)，可筛查23对染色体异常及200多种遗传疾病，大幅提高妊娠率并降低流产率。我们的中国资深医生团队拥有多年国际执业经验，使用先进设备和技术为您打造健康家庭。",
-      image: "https://photo.171006.xyz/photo/a671c16d3b2284d8da233.jpg",
+      image: "pexels-photo-287227.webp",
       btnText: "技术详情",
       targetSection: "medical-process"
     },
@@ -90,8 +90,8 @@ const HeroSlider = () => {
       <div className="absolute right-24 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-xl">
           <img 
-            src="https://photo.171006.xyz/QR1.png" 
-            alt="联系方式二维码" 
+            src="QR1.png" 
+            alt="微信联系haydonge" 
             className="w-32 h-72 object-cover" 
           />
           <p className="text-center mt-2 text-gray-700 font-medium text-sm">扫码咨询</p>

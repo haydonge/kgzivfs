@@ -91,8 +91,7 @@ function App() {
       {/* 价格套餐 */}
       <PricePackages />
       
-      {/* 签证攻略 */}
-      <VisaGuide />
+   
       
       {/* 医疗流程 */}
       <MedicalProcess />
@@ -115,6 +114,9 @@ function App() {
       {/* 联系表单 */}
       <ContactForm />
       
+      {/* 签证攻略 */}
+      <VisaGuide />
+
       {/* 页脚 */}
       <Footer />
     </div>

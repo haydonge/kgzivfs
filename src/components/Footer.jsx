@@ -23,19 +23,32 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg mr-3"></div>
-              <span className="text-2xl font-bold text-white">IVF Guide</span>
+              <img
+  src="/icon.svg"
+  alt="吉尔吉斯代孕Logo"
+  className="w-10 h-10 rounded-lg mr-3 bg-white/80"
+  draggable="false"
+/>
+              <span className="text-2xl font-bold text-white">吉尔吉斯代孕</span>
             </div>
             <p className="text-slate-400 mb-6 max-w-md">
               专业的试管婴儿咨询与服务平台，
               助您圆梦，共创幸福家庭。
             </p>
             <div className="flex space-x-4">
-              <SocialButton icon={<Facebook className="w-5 h-5" />} />
-              <SocialButton icon={<Instagram className="w-5 h-5" />} />
-              <SocialButton icon={<Twitter className="w-5 h-5" />} />
-              <SocialButton icon={<Youtube className="w-5 h-5" />} />
-            </div>
+  <a href="https://www.facebook.com/wklbaby" target="_blank" rel="noopener noreferrer">
+    <SocialButton icon={<Facebook className="w-5 h-5" />} />
+  </a>
+  <a href="https://www.instagram.com/wklbaby" target="_blank" rel="noopener noreferrer">
+    <SocialButton icon={<Instagram className="w-5 h-5" />} />
+  </a>
+  <a href="https://twitter.com/wklivf" target="_blank" rel="noopener noreferrer">
+    <SocialButton icon={<Twitter className="w-5 h-5" />} />
+  </a>
+  <a href="https://www.youtube.com/@haydonge5328" target="_blank" rel="noopener noreferrer">
+    <SocialButton icon={<Youtube className="w-5 h-5" />} />
+  </a>
+</div>
           </div>
 
           <div>

@@ -24,8 +24,12 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className={`w-10 h-10 rounded-lg mr-3 ${isScrolled ? 'bg-gradient-to-br from-indigo-600 to-purple-600' : 'bg-white/80'}`}></div>
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-700' : 'text-white'}`}>吉尔吉斯医旅</span>
+             <img   src="/icon.svg"
+              alt="吉尔吉斯代孕Logo"
+              className={`w-10 h-10 rounded-lg mr-3 ${isScrolled ? 'bg-gradient-to-br from-indigo-600 to-purple-600' : 'bg-white/80'}`}
+              draggable="false"
+              />
+            <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-700' : 'text-white'}`}>吉尔吉斯代孕</span>
           </div>
           
           {/* Desktop Navigation */}

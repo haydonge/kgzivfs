@@ -203,12 +203,19 @@ const ContactForm = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-xl shadow-lg text-white">
-              <h3 className="text-xl font-bold mb-4">免费咨询热线</h3>
-              <p className="text-lg font-medium mb-2">13912655230</p>
-              <p className="text-sm text-indigo-200">
-                工作日 9:00-22:00，欢迎来电咨询
-              </p>
+            <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-xl shadow-lg text-white flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1 text-left">
+                <h3 className="text-xl font-bold mb-4">免费咨询热线</h3>
+                <p className="text-lg font-medium mb-2">13912655230</p>
+                <p className="text-sm text-indigo-200 mb-2">工作日 9:00-22:00，欢迎来电咨询</p>
+              </div>
+              <div className="flex-shrink-0 flex items-center justify-center">
+                <img 
+                  src="qr2.webp"
+                  alt="微信联系haydonge" 
+                  className="w-36 h-auto rounded-xl shadow" 
+                />
+              </div>
             </div>
           </motion.div>
         </div>
