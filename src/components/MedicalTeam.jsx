@@ -178,62 +178,100 @@ const MedicalTeam = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
-            {hospitalInfo.name}
+            医院与医疗团队
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {hospitalInfo.description}
+            我们的专家团队与先进设施，为您的健康保驾护航
           </p>
-          <div className="mt-8 bg-white p-8 rounded-xl shadow-md text-left">
-            <p className="text-gray-700 mb-6 leading-relaxed">{hospitalInfo.intro}</p>
-            
-            <h3 className="text-2xl font-semibold text-indigo-700 mb-6">医院设施</h3>
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {hospitalInfo.branches.map((branch, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-indigo-100 rounded-full">
-                      <MapPin className="text-indigo-600" size={20} />
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-800">{branch.location}</h4>
-                  </div>
-                  <p className="text-gray-600 pl-11">{branch.features}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold text-indigo-700 mb-4">主要医疗方向</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {hospitalInfo.specialties.map((specialty, index) => (
-                  <div key={index} className="flex items-start">
-                    <span className="text-indigo-500 mr-2 mt-1">•</span>
-                    <span className="text-gray-700">{specialty}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-blue-50 p-6 rounded-lg mb-8 border border-blue-100">
-              <h3 className="text-2xl font-semibold text-indigo-700 mb-4">{hospitalInfo.ivfCenter.title}</h3>
-              <p className="text-gray-700 mb-4">{hospitalInfo.ivfCenter.description}</p>
-              
-              <h4 className="text-xl font-semibold text-indigo-600 mt-6 mb-3">为何选择我们？</h4>
-              <ul className="grid md:grid-cols-2 gap-2">
-                {hospitalInfo.whyChooseUs.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-indigo-500 mr-2 mt-1">•</span>
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
-              <p className="text-gray-700 italic">{hospitalInfo.conclusion}</p>
-            </div>
-          </div>
         </motion.div>
-        
+
+        {/* DOC University Clinic 医院介绍 */}
+        <div className="bg-slate-50 rounded-2xl p-8 mb-16 shadow-lg">
+          <h3 className="text-2xl font-bold text-indigo-800 mb-4 flex items-center justify-center">
+            <img src="https://photo.171006.xyz/Лого-DOC-university-clinic.webp" alt="DOC大学诊所LOGO" className="h-10 mr-4" />
+            DOC University Clinic
+          </h3>
+          <div className="flex flex-wrap gap-4 justify-center mb-6">
+            <img src="https://photo.171006.xyz/微信截图_20250429111356.webp" alt="DOC医院照片1" className="h-32 rounded-lg object-cover" />
+            <img src="https://photo.171006.xyz/微信图片_20250304135006.webp" alt="DOC医院照片2" className="h-32 rounded-lg object-cover" />
+            <img src="https://photo.171006.xyz/微信截图_20250429111356.webp" alt="DOC医院照片3" className="h-32 rounded-lg object-cover" />
+          </div>
+          <p className="text-lg font-semibold text-indigo-700 mb-2">吉尔吉斯斯坦现代医学典范，专注于辅助生殖技术</p>
+          <p className="mb-4">DOC大学诊所不仅是一家医疗机构，更是希望、健康与高科技的象征，坐落于比什凯克的中心地带。这里是医学与人文关怀交汇之所，患者的健康始终被置于首位。</p>
+          <div className="mb-4">
+            <h4 className="font-bold text-indigo-700 mb-2">分院信息</h4>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li><span className="font-semibold">提米里亚泽夫街78号分院</span>：面积1600平方米，包括门诊服务、诊断科、日间住院部及DOCLAB实验室、IVF中心</li>
+              <li><span className="font-semibold">乔马尔特·博孔巴耶夫街144号分院</span>：面积5000平方米，包括手术区、重症监护室、门诊部、60张床位的住院部、现代化实验室，全天候运行</li>
+            </ul>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-bold text-indigo-700 mb-2">专科特色</h4>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li>外科（普通外科、化脓外科、整形外科）</li>
+              <li>泌尿科</li>
+              <li>妇科（包括不孕不育治疗及试管婴儿）</li>
+              <li>试管婴儿与辅助生殖中心</li>
+              <li>耳鼻喉科</li>
+              <li>心脏病学与内科</li>
+              <li>创伤与矫形外科</li>
+              <li>物理治疗与康复</li>
+              <li>诊断（超声、心电图、超声心动图、X光、DOCLAB实验室）</li>
+              <li>牙科</li>
+            </ul>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-bold text-indigo-700 mb-2">IVF辅助生殖技术中心（试管婴儿）</h4>
+            <p>DOC 大学诊所的试管婴儿中心是本机构的骄傲，也是成千上万家庭的福音。这里提供全面的不孕不育诊断与治疗、试管婴儿（IVF）、卵胞浆内单精子注射（ICSI）、辅助生殖手术、孕期管理及激素治疗。该部门由拥有国际经验的产科-妇科医生、辅助生殖专家纳尔吉扎·奥尔蒙别科娃领导。团队成员还包括医学博士候选人、内窥镜外科专家、DOC IVF 中心主任阿扎特·卡尔米舍夫。凭借高度的专业水平与个性化方案，该中心实现了较高的妊娠成功率，并积累了大量成功案例。</p>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-bold text-indigo-700 mb-2">为什么选择我们？</h4>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li>先进的高端医疗设备</li>
+              <li>拥有国际经验和荣誉称号的医生</li>
+              <li>全面、团队协作的治疗方式</li>
+              <li>为每位患者量身打造的治疗方案</li>
+              <li>在试管婴儿项目中成果显著</li>
+              <li>拥有自主的DOCLAB 实验室，可实现快速诊断</li>
+              <li>提供舒适的就医环境与人性化服务</li>
+            </ul>
+          </div>
+          <p className="text-indigo-900 font-semibold">DOC 大学诊所不仅是一个医疗中心，更是梦想实现之地。它是现代吉尔吉斯医学的典范，融合了科技、人文与卓越成果。在国际展会上，DOC 代表吉尔吉斯斯坦，以进步、关怀和高效的医疗体系赢得广泛认可。</p>
+        </div>
+        {/* 唐IVF Center 医院介绍 */}
+        <div className="bg-slate-50 rounded-2xl p-8 mb-16 shadow-lg">
+          <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center justify-center">
+            <img src="https://photo.171006.xyz/微信图片_20250522093113.png" alt="唐IVF Center LOGO" className="h-10 mr-4" />
+            唐IVF Center
+          </h3>
+          <div className="flex flex-wrap gap-4 justify-center mb-6">
+            <img src="https://photo.171006.xyz/chrome_yfJWvPSK4R.png" alt="唐IVF医院照片1" className="h-32 rounded-lg object-cover" />
+            <img src="https://photo.171006.xyz/chrome_B7N0CJG9Kg.png" alt="唐IVF医院照片2" className="h-32 rounded-lg object-cover" />
+          </div>
+          <p className="text-lg font-semibold text-red-700 mb-2">中国辅助生殖新典范，专注高端IVF技术与国际化服务</p>
+          <p className="mb-4">唐IVF Center 坐落于中国某大都市核心地段，是一家融合前沿科技与人文关怀的现代化辅助生殖专科医院。医院配备国际一流的胚胎实验室与IVF手术室，致力于为全球患者提供精准、安全、高成功率的辅助生殖解决方案。</p>
+          <div className="mb-4">
+            <h4 className="font-bold text-red-700 mb-2">核心特色</h4>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li>国际认证胚胎实验室与独立IVF手术区</li>
+              <li>中英双语医疗团队，服务全球患者</li>
+              <li>专属一对一生殖顾问，全程陪护</li>
+              <li>高龄、反复失败及特殊病例专属绿色通道</li>
+              <li>远程会诊与全球随访服务</li>
+            </ul>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-bold text-red-700 mb-2">为什么选择唐IVF Center？</h4>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li>采用全球领先的辅助生殖技术与设备</li>
+              <li>专家团队均有丰富国际经验与认证</li>
+              <li>注重患者隐私与心理关怀</li>
+              <li>全流程数字化管理，提升就医体验</li>
+              <li>多学科协作，个性化定制治疗方案</li>
+            </ul>
+          </div>
+          <p className="text-red-900 font-semibold">唐IVF Center，致力于让每一个家庭都能拥有属于自己的新生命。未来，我们将不断创新，成为亚洲辅助生殖领域的引领者。</p>
+        </div>
         <div className="grid md:grid-cols-4 gap-10">
           {teamMembers.map((member, index) => (
             <motion.div
