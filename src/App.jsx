@@ -76,7 +76,8 @@ function App() {
       <Navbar 
         isScrolled={isScrolled} 
         isMenuOpen={isMenuOpen} 
-        setIsMenuOpen={setIsMenuOpen} 
+        setIsMenuOpen={setIsMenuOpen}
+        handleConsultClick={handleConsultClick}
       />
       
       {/* Hero 轮播区域 */}
@@ -109,7 +110,12 @@ function App() {
       <Testimonials />
       
       {/* CTA区域 */}
-      <CTASection handleConsultClick={handleConsultClick} />
+       {
+         /*
+         <CTASection handleConsultClick={handleConsultClick} />
+         <SomeOtherComponent />
+         */
+       }
       
       {/* 联系表单 */}
       <ContactForm />

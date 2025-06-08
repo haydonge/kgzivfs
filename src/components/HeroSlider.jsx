@@ -12,7 +12,7 @@ const HeroSlider = () => {
       title: "吉尔吉斯斯坦专业代孕服务",
       subtitle: "圆您家庭梦想",
       description: "提供高质量代孕及试管婴儿服务，由具有20年经验的中国医生团队全程操作，确保95%以上的成功率。我们拥有现代化医疗设施，采用先进技术，为您提供安全、可靠、透明的一站式服务，让每一位客户安心无忧。",
-      image: "https://photo.171006.xyz/ZRtwrNCegKfzttuQToGyh.jpg",
+      image: "hero-slide-1.jpg",
       btnText: "查看套餐",
       targetSection: "prices"
     },
@@ -30,7 +30,7 @@ const HeroSlider = () => {
       title: "一站式代孕服务",
       subtitle: "无忧全程陪护",
       description: "从初次咨询到宝宝回国，我们提供360°全方位服务：专业医疗咨询、合法合规签约、先进试管技术、严格代孕妈妈筛选（含体检、心理评估、背景调查）、全程孕期监控、24小时医疗陪护、出生证明和旅行证件办理，确保您的整个旅程舒适无忧。",
-      image: "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      image: "hero-slide-3.jpg",
       btnText: "联系我们",
       targetSection: "contact"
     },
@@ -39,7 +39,7 @@ const HeroSlider = () => {
       title: "优质卵妹服务",
       subtitle: "高性价比选择",
       description: "我们严格筛选20-28岁健康卵妹，所有卵妹均经过全面体检（包括遗传病史、生育能力评估）、心理评估和背景调查。提供卵子基因检测、冷冻保存、运输和移植全流程服务，多种方案可选。每位卵妹不超过3次捐卵，确保卵子质量和健康。",
-      image: "https://photo.171006.xyz/BnhlQFV9saUfFbiAJizbp.jpg",
+      image: "hero-slide-4.jpg",
       btnText: "咨询详情",
       targetSection: "services"
     },
@@ -48,7 +48,7 @@ const HeroSlider = () => {
       title: "全程中文服务团队",
       subtitle: "无障碍沟通体验",
       description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦的那一刻起，您将享受到如同在国内的无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
-      image: "https://photo.171006.xyz/fuzhushengzhi/F02d-HLaEAYB_UV.jpeg",
+      image: "hero-slide-5.jpeg",
       btnText: "了解团队",
       targetSection: "team"
     },
@@ -57,7 +57,7 @@ const HeroSlider = () => {
       title: "合法安心，隐私保障",
       subtitle: "法律与隐私双重保障",
       description: "吉尔吉斯斯坦是少数合法允许代孕和试管婴儿的国家之一，法律框架完善且稳定。我们严格遵循当地法规，提供100%合法服务。同时，我们采用严格的隐私保护措施，所有客户信息绝对保密，合同和协议均有法律效力，确保您的权益和隐私得到全面保障。",
-      image: "https://photo.171006.xyz/photo/20230530104931.png",
+      image: "hero-slide-6.png",
       btnText: "了解政策",
       targetSection: "visa-guide"
     }
@@ -111,7 +111,8 @@ const HeroSlider = () => {
           <img 
             src={slides[current].image}
             alt={slides[current].title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            style={{ objectPosition: 'center center' }}
           />
         </motion.div>
       </AnimatePresence>

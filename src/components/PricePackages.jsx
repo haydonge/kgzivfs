@@ -81,41 +81,75 @@ const PricePackages = () => {
   };
   
   // 显示价格表格
+  // 显示价格表格
   const renderTable = (packageData) => (
-    <div className="overflow-x-auto shadow-lg rounded-xl mt-6">
-      <table className="w-full text-sm divide-y divide-gray-200 border">
-        <thead className="bg-gradient-to-r from-indigo-600 to-indigo-800">
-          <tr>
-            {packageData.headers.map((header, index) => (
-              <th 
-                key={index} 
-                className={`px-4 py-4 text-white font-semibold text-sm text-center ${index === 0 ? 'text-left' : ''}`}
-                dangerouslySetInnerHTML={{__html: header.replace('\\', '<br/>')}}
-              />
-            ))}
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          {packageData.rows.map((row, rowIndex) => (
-            <tr 
-              key={rowIndex} 
-              className={row.name.includes('总金额') ? 'bg-yellow-100 font-bold' : ''}
-            >
-              <td className="px-4 py-4 whitespace-nowrap text-gray-800">
-                {row.name}
-              </td>
-              {row.prices.map((price, priceIndex) => (
-                <td 
-                  key={priceIndex} 
-                  className="px-4 py-4 whitespace-nowrap text-center text-gray-800"
-                >
-                  {price ? `${price} 美元` : '-'}
-                </td>
+    <div className="mt-6">
+      {/* 桌面端表格 */}
+      <div className="hidden lg:block overflow-x-auto shadow-lg rounded-xl">
+        <table className="w-full text-sm divide-y divide-gray-200 border">
+          <thead className="bg-gradient-to-r from-indigo-600 to-indigo-800">
+            <tr>
+              {packageData.headers.map((header, index) => (
+                <th 
+                  key={index} 
+                  className={`px-4 py-4 text-white font-semibold text-sm text-center ${
+                    index === 0 ? 'text-left' : ''
+                  }`}
+                  dangerouslySetInnerHTML={{__html: header.replace('\\', '<br/>')}}
+                />
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {packageData.rows.map((row, rowIndex) => (
+              <tr 
+                key={rowIndex} 
+                className={row.name.includes('总金额') ? 'bg-yellow-100 font-bold' : ''}
+              >
+                <td className="px-4 py-4 whitespace-nowrap text-gray-800">
+                  {row.name}
+                </td>
+                {row.prices.map((price, priceIndex) => (
+                  <td 
+                    key={priceIndex} 
+                    className="px-4 py-4 whitespace-nowrap text-center text-gray-800"
+                  >
+                    {price ? `${price} 美元` : '-'}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      {/* 移动端卡片布局 */}
+      <div className="lg:hidden space-y-4">
+        {packageData.headers.slice(1).map((header, headerIndex) => (
+          <div key={headerIndex} className="bg-white rounded-lg shadow-md p-4">
+            <h4 className="font-bold text-indigo-700 mb-3 text-center">
+              {header.replace('\\', ' ')}
+            </h4>
+            <div className="space-y-2">
+              {packageData.rows.map((row, rowIndex) => (
+                <div 
+                  key={rowIndex} 
+                  className={`flex justify-between items-center py-2 ${
+                    row.name.includes('总金额') 
+                      ? 'bg-yellow-100 font-bold px-3 rounded' 
+                      : 'border-b border-gray-100'
+                  }`}
+                >
+                  <span className="text-gray-700">{row.name}</span>
+                  <span className="text-gray-800 font-medium">
+                    {row.prices[headerIndex] ? `${row.prices[headerIndex]} 美元` : '-'}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 
@@ -140,15 +174,23 @@ const PricePackages = () => {
         </motion.div>
         
         {/* 标签切换 */}
-        <div className="flex justify-center mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row justify-center mb-8 gap-4">
           <button
-            className={`px-8 py-3 rounded-lg text-lg font-medium transition ${activeTab === 'ivf' ? 'bg-indigo-600 text-white' : 'bg-white text-indigo-600 border border-indigo-200'}`}
+            className={`px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-medium transition ${
+              activeTab === 'ivf' 
+                ? 'bg-indigo-600 text-white' 
+                : 'bg-white text-indigo-600 border border-indigo-200'
+            }`}
             onClick={() => handleTabChange('ivf')}
           >
             试管婴儿套餐
           </button>
           <button
-            className={`px-8 py-3 rounded-lg text-lg font-medium transition ${activeTab === 'surrogacy' ? 'bg-indigo-600 text-white' : 'bg-white text-indigo-600 border border-indigo-200'}`}
+            className={`px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-medium transition ${
+              activeTab === 'surrogacy' 
+                ? 'bg-indigo-600 text-white' 
+                : 'bg-white text-indigo-600 border border-indigo-200'
+            }`}
             onClick={() => handleTabChange('surrogacy')}
           >
             代孕套餐
@@ -159,9 +201,9 @@ const PricePackages = () => {
         {activeTab === 'ivf' ? renderTable(ivfPackages) : renderTable(surrogacyPackages)}
         
         {/* 补充说明 */}
-        <div className="mt-10 bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-bold mb-4 text-gray-800">套餐说明</h3>
-          <ul className="list-disc pl-5 space-y-2 text-gray-600">
+        <div className="mt-10 bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-800">套餐说明</h3>
+          <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-gray-600">
             <li>以上价格单位均为美元，可接受人民币、美元等多种货币付款</li>
             <li>套餐价格包含吉尔吉斯斯坦当地医疗费用、住宿及基础翻译服务</li>
             <li>所有套餐均由中国医生亲自操作，确保医疗质量</li>

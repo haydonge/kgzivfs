@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 // 导航栏组件
-const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled }) => {
+const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled, handleConsultClick }) => {
   // 导航链接数据
   const navLinks = [
     { title: '首页', href: '#home' },
@@ -45,7 +45,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled }) => {
                 {link.title}
               </a>
             ))}
-            <button className="btn-primary">
+            {/* 桌面端按钮 */}
+            <button className="btn-primary" onClick={handleConsultClick}>
               预约咨询
             </button>
           </nav>
@@ -88,7 +89,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled }) => {
                   {link.title}
                 </a>
               ))}
-              <button className="btn-primary w-full py-3">
+              {/* 移动端按钮 */}
+              <button className="btn-primary w-full py-3" onClick={handleConsultClick}>
                 预约咨询
               </button>
             </nav>
