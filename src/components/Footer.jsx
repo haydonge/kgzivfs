@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <img
-  src="/icon.svg"
+  src="/favicon-32x32.png"
   alt="吉尔吉斯代孕Logo"
   className="w-10 h-10 rounded-lg mr-3 bg-white/80"
   draggable="false"

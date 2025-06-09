@@ -188,7 +188,7 @@ const MedicalTeam = () => {
         {/* DOC University Clinic 医院介绍 */}
         <div className="bg-slate-50 rounded-2xl p-8 mb-16 shadow-lg">
           <div className="flex flex-col items-center mb-4">
-            <img src="https://photo.171006.xyz/Лого-DOC-university-clinic.webp" alt="DOC大学诊所LOGO" className="h-24" />
+            <img src="https://photo.171006.xyz/Лого-DOC-university-clinic.webp" alt="吉尔吉斯代孕合作医院DOC大学诊所LOGO" className="h-24" />
             <p className="text-lg font-semibold text-indigo-700 mb-2">--------------------- </p>
             <h3 className="text-2xl font-bold text-indigo-800 mb-2">   DOC University Clinic</h3>
           </div>
@@ -196,15 +196,15 @@ const MedicalTeam = () => {
             {[
               {
                 src: "https://photo.171006.xyz/微信截图_20250429111356.webp",
-                alt: "DOC医院照片1"
+                alt: "吉尔吉斯代孕合作医院DOC医院照片1"
               },
               {
                 src: "https://photo.171006.xyz/微信图片_20250304135006.webp",
-                alt: "DOC医院照片2"
+                alt: "吉尔吉斯代孕合作医院DOC医院照片2"
               },
               {
                 src: "https://photo.171006.xyz/微信截图_20250429111356.webp",
-                alt: "DOC医院照片3"
+                alt: "吉尔吉斯代孕合作医院DOC医院照片3"
               }
             ].map((img, idx) => (
               <div
@@ -276,7 +276,7 @@ const MedicalTeam = () => {
         {/* 唐IVF Center 医院介绍 */}
         <div className="bg-slate-50 rounded-2xl p-8 mb-16 shadow-lg">
           <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center justify-center">
-            <img src="https://photo.171006.xyz/微信图片_20250522093113.png" alt="唐IVF Center LOGO" className="h-10 mr-4" />
+            <img src="https://photo.171006.xyz/微信图片_20250522093113.png" alt="吉尔吉斯代孕合作医院唐IVF Center LOGO" className="h-10 mr-4" />
             唐IVF Center
           </h3>
           {/* 图片区域 */}
@@ -284,11 +284,11 @@ const MedicalTeam = () => {
             {[
               {
                 src: "https://photo.171006.xyz/chrome_yfJWvPSK4R.png",
-                alt: "唐IVF医院照片1"
+                alt: "吉尔吉斯代孕合作医院唐IVF医院照片1"
               },
               {
                 src: "https://photo.171006.xyz/chrome_B7N0CJG9Kg.png",
-                alt: "唐IVF医院照片2"
+                alt: "吉尔吉斯代孕合作医院唐IVF医院照片2"
               }
             ].map((img, idx) => (
               <div
@@ -316,7 +316,7 @@ const MedicalTeam = () => {
               <ul className="list-disc pl-6 text-gray-700 space-y-1">
                 <li>国际认证胚胎实验室与独立IVF手术区</li>
                 <li>中英双语医疗团队，服务全球患者</li>
-                <li>专属一对一生殖顾问，全程陪护</li>
+                <li>专属一对生殖Advisor，全程陪护</li>
                 <li>高龄、反复失败及特殊病例专属绿色通道</li>
                 <li>远程会诊与全球随访服务</li>
               </ul>
@@ -352,7 +352,7 @@ const MedicalTeam = () => {
               <div className="relative overflow-hidden">
                 <img 
                   src={member.avatar} 
-                  alt={member.name} 
+                  alt={`吉尔吉斯代孕医疗团队 - ${member.name}`} 
                   className="w-full h-64 object-cover transition-transform duration-700 hover:scale-110" 
                   onError={(e) => {
                     e.target.onerror = null;

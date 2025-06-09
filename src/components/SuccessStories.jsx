@@ -67,7 +67,7 @@ const StoryModal = ({ isOpen, onClose, story }) => {
         <div className="p-8">
           <img 
             src={story.image} 
-            alt={story.title} 
+            alt={`吉尔吉斯代孕成功案例详情 - ${story.title}`} 
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
           
@@ -179,7 +179,7 @@ const SuccessStories = () => {
               <div className="relative overflow-hidden h-60">
                 <img 
                   src={story.image} 
-                  alt={story.title} 
+                  alt={`吉尔吉斯代孕成功案例 - ${story.title}`} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 to-transparent flex flex-col justify-end p-6">

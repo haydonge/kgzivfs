@@ -47,7 +47,7 @@ const HeroSlider = () => {
       id: 5,
       title: "全程中文服务团队",
       subtitle: "无障碍沟通体验",
-      description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦的那一刻起，您将享受到如同在国内的无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
+      description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦那一刻起，您将享受到如同在中国无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
       image: "hero-slide-5.jpg",
       btnText: "了解团队",
       targetSection: "team"
@@ -91,7 +91,7 @@ const HeroSlider = () => {
         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-xl">
           <img 
             src="QR1.png" 
-            alt="微信联系haydonge" 
+            alt="吉尔吉斯代孕微信联系haydonge" 
             className="w-32 h-72 object-cover" 
           />
           <p className="text-center mt-2 text-gray-700 font-medium text-sm">扫码咨询</p>
@@ -110,7 +110,7 @@ const HeroSlider = () => {
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img 
             src={slides[current].image}
-            alt={slides[current].title}
+            alt={`吉尔吉斯代孕 - ${slides[current].title}`}
             className="w-full h-full object-cover object-center"
             style={{ objectPosition: 'center center' }}
           />

@@ -24,7 +24,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled, handleConsultClick }) =
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-             <img   src="/icon.svg"
+             <img   src="/favicon-32x32.png"
               alt="吉尔吉斯代孕Logo"
               className={`w-10 h-10 rounded-lg mr-3 ${isScrolled ? 'bg-gradient-to-br from-indigo-600 to-purple-600' : 'bg-white/80'}`}
               draggable="false"
