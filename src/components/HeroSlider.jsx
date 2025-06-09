@@ -23,7 +23,7 @@ const HeroSlider = () => {
       description: "采用国际领先的第三代试管婴儿技术(PGD/PGS)，可筛查23对染色体异常及200多种遗传疾病，大幅提高妊娠率并降低流产率。我们的中国资深医生团队拥有多年国际执业经验，使用先进设备和技术为您打造健康家庭。",
       image: "pexels-photo-287227.webp",
       btnText: "技术详情",
-      targetSection: "medical-process"
+      targetSection: "serviceadvantages"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const HeroSlider = () => {
       description: "从初次咨询到宝宝回国，我们提供360°全方位服务：专业医疗咨询、合法合规签约、先进试管技术、严格代孕妈妈筛选（含体检、心理评估、背景调查）、全程孕期监控、24小时医疗陪护、出生证明和旅行证件办理，确保您的整个旅程舒适无忧。",
       image: "hero-slide-3.jpg",
       btnText: "联系我们",
-      targetSection: "contact"
+      targetSection: "medicalprocess"
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ const HeroSlider = () => {
       title: "全程中文服务团队",
       subtitle: "无障碍沟通体验",
       description: "我们的服务团队由全部说中文的专业人员组成，包括医生、翻译、后勤保障和法律顾问。从踏入吉尔吉斯斯坦的那一刻起，您将享受到如同在国内的无障碍沟通体验。我们的中国医生团队拥有丰富的国际经验，全程为您提供专业咨询和支持。",
-      image: "hero-slide-5.jpeg",
+      image: "hero-slide-5.jpg",
       btnText: "了解团队",
       targetSection: "team"
     },
@@ -57,7 +57,7 @@ const HeroSlider = () => {
       title: "合法安心，隐私保障",
       subtitle: "法律与隐私双重保障",
       description: "吉尔吉斯斯坦是少数合法允许代孕和试管婴儿的国家之一，法律框架完善且稳定。我们严格遵循当地法规，提供100%合法服务。同时，我们采用严格的隐私保护措施，所有客户信息绝对保密，合同和协议均有法律效力，确保您的权益和隐私得到全面保障。",
-      image: "hero-slide-6.png",
+      image: "hero-slide-6.jpg",
       btnText: "了解政策",
       targetSection: "visa-guide"
     }

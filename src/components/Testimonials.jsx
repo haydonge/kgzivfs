@@ -149,7 +149,15 @@ const Testimonials = () => {
             <p className="text-pink-100 mb-6">
               专业的医疗团队、完善的法律保障、透明的服务流程，让您的求子之路更加安心
             </p>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button 
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               立即咨询专业顾问
             </button>
           </div>

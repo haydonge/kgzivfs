@@ -11,7 +11,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen, isScrolled, handleConsultClick }) =
     { title: '价格套餐', href: '#prices' },
     { title: '医疗团队', href: '#team' },
     { title: '成功案例', href: '#success-stories' },
-    { title: '联系我们', href: '#contact' }
+    { title: '代孕流程', href: '#medicalprocess' }
   ];
 
   return (

@@ -34,6 +34,12 @@ const CTASection = ({ handleConsultClick }) => {
             
             <button 
               className="bg-transparent border-2 border-white/50 hover:bg-white/10 text-xl px-12 py-6 rounded-lg transition-colors"
+              onClick={() => {
+                const element = document.getElementById('services');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               了解更多详情
             </button>

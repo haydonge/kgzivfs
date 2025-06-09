@@ -98,7 +98,15 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-6 w-full py-3 bg-slate-100 hover:bg-slate-200 text-indigo-700 font-medium rounded-lg transition-colors">
+                <button 
+                  className="mt-6 w-full py-3 bg-slate-100 hover:bg-slate-200 text-indigo-700 font-medium rounded-lg transition-colors"
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
                   了解详情
                 </button>
               </div>

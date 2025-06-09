@@ -1,20 +1,40 @@
 import React from 'react';
 import { Phone, Globe, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { useState } from 'react';
 
+// 在组件顶部添加状态和处理函数
 const Footer = () => {
+  const [showModal, setShowModal] = useState(null);
+  
+  const handleLinkClick = (type) => {
+    if (type === 'visa-guide') {
+      const element = document.getElementById('visa-guide');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (type === 'medical-process') {
+      const element = document.getElementById('medical-process');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      setShowModal(type);
+    }
+  };
+  
   // 页脚链接数据
   const quickLinks = [
-    { name: "签证指南", href: "#" },
-    { name: "医疗流程", href: "#" },
+    { name: "签证指南", action: () => handleLinkClick('visa-guide') },
+    { name: "医疗流程", action: () => handleLinkClick('medical-process') },
     { name: "服务项目", href: "#services" },
     { name: "成功案例", href: "#success-stories" },
-    { name: "常见问题", href: "#" }
+    { name: "常见问题", action: () => handleLinkClick('faq') }
   ];
   
   const legalLinks = [
-    { name: "隐私政策", href: "#" },
-    { name: "服务条款", href: "#" },
-    { name: "免责声明", href: "#" }
+    { name: "隐私政策", action: () => handleLinkClick('privacy') },
+    { name: "服务条款", action: () => handleLinkClick('terms') },
+    { name: "免责声明", action: () => handleLinkClick('disclaimer') }
   ];
 
   return (
@@ -56,9 +76,18 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-slate-400 hover:text-white transition-colors">
-                    {link.name}
-                  </a>
+                  {link.href ? (
+                    <a href={link.href} className="text-slate-400 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <button 
+                      onClick={link.action}
+                      className="text-slate-400 hover:text-white transition-colors text-left"
+                    >
+                      {link.name}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -100,11 +129,41 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap gap-6">
             {legalLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-slate-500 text-sm hover:text-slate-300 transition-colors">
+              <button 
+                key={link.name} 
+                onClick={link.action}
+                className="text-slate-500 text-sm hover:text-slate-300 transition-colors"
+              >
                 {link.name}
-              </a>
+              </button>
             ))}
           </div>
+          
+          {/* 模态框 */}
+          {showModal && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+                <h3 className="text-lg font-bold mb-4">
+                  {showModal === 'faq' && '常见问题'}
+                  {showModal === 'privacy' && '隐私政策'}
+                  {showModal === 'terms' && '服务条款'}
+                  {showModal === 'disclaimer' && '免责声明'}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {showModal === 'faq' && '这里是常见问题的内容...'}
+                  {showModal === 'privacy' && '我们承诺保护您的个人信息安全...'}
+                  {showModal === 'terms' && '服务条款内容...'}
+                  {showModal === 'disclaimer' && '免责声明内容...'}
+                </p>
+                <button 
+                  className="bg-indigo-600 text-white px-4 py-2 rounded"
+                  onClick={() => setShowModal(null)}
+                >
+                  关闭
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </footer>

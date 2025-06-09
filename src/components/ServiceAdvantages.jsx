@@ -1,78 +1,75 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Heart, Globe, Shield, Clock, Users } from 'lucide-react';
+import { FaUserMd, FaHeart, FaGlobe, FaShieldAlt, FaBaby, FaHandsHelping, FaFlask, FaUsers } from 'react-icons/fa';
 
 const ServiceAdvantages = () => {
-  // 服务优势数据
   const advantages = [
     {
-      icon: <Award className="w-12 h-12 text-indigo-600" />,
-      title: '国际认证',
-      description: '拥有国际认证资质，技术团队经验丰富'
+      icon: <FaUserMd className="text-4xl text-blue-600 mb-4" />,
+      title: "专业医疗团队",
+      description: "拥有丰富经验的生殖医学专家，提供个性化治疗方案，确保最佳治疗效果。"
     },
     {
-      icon: <Heart className="w-12 h-12 text-indigo-600" />,
-      title: '专业医护',
-      description: '团队由专业医生护士组成，全程细心照料'
+      icon: <FaHeart className="text-4xl text-blue-600 mb-4" />,
+      title: "贴心服务体验",
+      description: "全程一对一专属服务，从咨询到治疗完成，提供温馨舒适的就医环境。"
     },
     {
-      icon: <Globe className="w-12 h-12 text-indigo-600" />,
-      title: '全球资源',
-      description: '对接全球医疗资源，提供一站式专业服务'
+      icon: <FaGlobe className="text-4xl text-blue-600 mb-4" />,
+      title: "国际化标准",
+      description: "采用国际先进的医疗设备和技术标准，与世界顶级生殖中心保持同步。"
     },
     {
-      icon: <Shield className="w-12 h-12 text-indigo-600" />,
-      title: '安全保障',
-      description: '严格执行安全标准，提供全方位健康保障'
+      icon: <FaShieldAlt className="text-4xl text-blue-600 mb-4" />,
+      title: "合法的代孕法规",
+      description: "吉尔吉斯斯坦《家庭法》明确规定代孕合法化，为国际客户提供完善的法律保障和透明的法律程序。"
     },
     {
-      icon: <Clock className="w-12 h-12 text-indigo-600" />,
-      title: '时间灵活',
-      description: '根据您的时间安排定制专属计划'
+      icon: <FaUsers className="text-4xl text-blue-600 mb-4" />,
+      title: "优选代孕资源",
+      description: "严格筛选的优质代母和卵子捐赠者资源，完善的健康检查和心理评估体系，确保最佳匹配。"
     },
     {
-      icon: <Users className="w-12 h-12 text-indigo-600" />,
-      title: '一对一服务',
-      description: '专属顾问全程一对一跟进，随时解答问题'
+      icon: <FaFlask className="text-4xl text-blue-600 mb-4" />,
+      title: "高级试管技术",
+      description: "采用中国成熟的第三代试管婴儿技术（PGD/PGS），包括胚胎植入前遗传学检测，显著提高成功率。"
+    },
+    {
+      icon: <FaHandsHelping className="text-4xl text-blue-600 mb-4" />,
+      title: "专业代理服务",
+      description: "专业代理公司提供全方位服务，包括法律咨询、医疗协调、生活安排和跨国事务处理。"
+    },
+    {
+      icon: <FaBaby className="text-4xl text-blue-600 mb-4" />,
+      title: "高成功率保障",
+      description: "凭借先进技术和丰富经验，我们的成功率位居行业前列，为您的生育梦想保驾护航。"
     }
   ];
 
   return (
-    <section className="py-32 relative">
-      <div className="section-divider mb-20"></div>
-      
-      <div className="container mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
-            我们的服务优势
+    <section id="serviceadvantages" className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            技术服务优势
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            专业、周到、安全，为您提供最优质的IVF服务体验
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            我们致力于为每一位客户提供最专业、最贴心的生殖医疗服务
           </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advantages.map((advantage, index) => (
-            <motion.div
-              key={advantage.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="mb-6">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="flex justify-center">
                 {advantage.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">{advantage.title}</h3>
-              <p className="text-gray-600">{advantage.description}</p>
-            </motion.div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                {advantage.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {advantage.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
