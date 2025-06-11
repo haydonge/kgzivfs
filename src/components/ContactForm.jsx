@@ -211,9 +211,9 @@ const ContactForm = () => {
               </div>
               <div className="flex-shrink-0 flex items-center justify-center">
                 <img 
-                  src="QR1.png" 
+                  src="qr2.webp" 
                   alt="吉尔吉斯代孕微信联系haydonge" 
-                  className="w-32 h-32 object-cover" 
+                  className="w-52 h-32 object-cover" 
                 />
               </div>
             </div>

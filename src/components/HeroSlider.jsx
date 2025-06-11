@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 // 英雄轮播图组件
 const HeroSlider = () => {
-  // 轮播图数据
   const slides = [
     {
       id: 1,
@@ -62,11 +61,10 @@ const HeroSlider = () => {
       targetSection: "visa-guide"
     }
   ];
-
-  // 状态管理
   const [current, setCurrent] = useState(0);
-  
-  // 自动轮播
+  const [formsAppInstance, setFormsAppInstance] = useState(null);
+  const formsAppScriptLoaded = useRef(false); // 用于确保脚本只加载一次
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -74,19 +72,99 @@ const HeroSlider = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // 下一张幻灯片
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
+  // 加载 forms.app 脚本并创建实例
+  useEffect(() => {
+    if (formsAppScriptLoaded.current) return; // 如果脚本已加载，则不再执行
+
+    const scriptId = 'formsapp-embed-script';
+    if (document.getElementById(scriptId)) { // 再次检查，以防万一
+      formsAppScriptLoaded.current = true;
+      // 如果脚本已存在但实例未创建 (理论上不应发生在此逻辑下)
+      if (!formsAppInstance && window.formsapp && typeof window.formsapp === 'function') {
+        try {
+          const instance = new window.formsapp('6848f9f42eb8ca0002d505ea', 'popup', {
+            'overlay': 'rgba(45,45,45,0.5)',
+            'button': {'color':'#ff9e24','text':'点击这里！'}, // 这个按钮配置可能仍然是针对 forms.app 自身创建的触发器
+            'width': '800px',
+            'height': '600px',
+            'openingAnimation': {'entrance':'animate__fadeIn','exit':'animate__fadeOut'}
+          }, 'https://af5fj9sl.forms.app');
+          setFormsAppInstance(instance);
+          console.log('Forms.app instance created (script already existed).');
+        } catch (e) {
+          console.error('Error creating forms.app instance (script already existed):', e);
+        }
+      }
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = 'https://forms.app/cdn/embed.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      console.log('forms.app embed.js loaded');
+      formsAppScriptLoaded.current = true;
+      if (window.formsapp && typeof window.formsapp === 'function') {
+        try {
+          const instance = new window.formsapp('6848f9f42eb8ca0002d505ea', 'popup', {
+            'overlay': 'rgba(45,45,45,0.5)',
+            'button': {'color':'#ff9e24','text':'点击这里！'},
+            'width': '800px',
+            'height': '600px',
+            'openingAnimation': {'entrance':'animate__fadeIn','exit':'animate__fadeOut'}
+          }, 'https://af5fj9sl.forms.app');
+          setFormsAppInstance(instance);
+          console.log('Forms.app instance created.');
+        } catch (e) {
+          console.error('Error creating forms.app instance:', e);
+        }
+      } else {
+        console.error('forms.app embed.js loaded, but window.formsapp is not defined or not a function.');
+      }
+    };
+    script.onerror = () => {
+      console.error('Failed to load forms.app embed.js');
+      formsAppScriptLoaded.current = false; // 加载失败，允许重试 (尽管此effect只运行一次)
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // 清理：移除脚本。实例的清理取决于 forms.app 是否有 destroy 方法
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+      if (formsAppInstance && typeof formsAppInstance.destroy === 'function') {
+        // formsAppInstance.destroy(); // 如果 forms.app 提供销毁方法
+      }
+      // 移除 forms.app 可能添加的全局UI元素
+      const formsappOverlay = document.querySelector('.formsapp-overlay');
+      if (formsappOverlay) formsappOverlay.remove();
+      const formsappPopup = document.querySelector('.formsapp-popup-container');
+      if (formsappPopup) formsappPopup.remove();
+      formsAppScriptLoaded.current = false; // 重置加载状态，以便组件重新挂载时可以重新加载
+    };
+  }, []); // 空依赖数组，确保只在挂载和卸载时运行
+
+  const handleOpenForm = () => {
+    if (formsAppInstance && typeof formsAppInstance.open === 'function') {
+      formsAppInstance.open();
+    } else {
+      console.error('Forms.app instance is not available or does not have an open method.');
+      // 可以尝试在这里重新加载脚本或重新创建实例，作为备用方案，但这会使逻辑复杂化
+      // alert('表单功能暂不可用，请稍后重试。');
+    }
   };
 
-  // 上一张幻灯片
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
     <section id="home" className="relative h-screen overflow-hidden bg-slate-900">
-      {/* 二维码浮动元素 */}
+      {/* ... 二维码和其他元素 ... */}
       <div className="absolute right-24 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
         <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-xl">
           <img 
@@ -97,8 +175,9 @@ const HeroSlider = () => {
           <p className="text-center mt-2 text-gray-700 font-medium text-sm">扫码咨询</p>
         </div>
       </div>
-      {/* 背景轮播图 */}
+
       <AnimatePresence mode="wait">
+        {/* ... 背景轮播图保持不变 ... */}
         <motion.div
           key={slides[current].id}
           className="absolute inset-0 z-0"
@@ -117,11 +196,10 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
       
-      {/* 内容区域 */}
       <div className="container mx-auto px-6 relative z-20 h-full flex items-center">
         <AnimatePresence mode="wait">
           <motion.div
-            key={slides[current].id}
+            key={slides[current].id} 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
@@ -138,32 +216,25 @@ const HeroSlider = () => {
             
             <div className="flex flex-wrap gap-6">
               <Link
-                to={slides[current].targetSection}
-                spy={true}
-                smooth={true}
-                duration={800}
-                offset={-100}
+                to={slides[current].targetSection} /* ... */
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors cursor-pointer"
               >
                 {slides[current].btnText} 
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                duration={800}
-                offset={-100}
+              {/* 修改按钮，移除 formsappId，添加 onClick 事件 */}
+              <button 
+                onClick={handleOpenForm} 
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-colors cursor-pointer"
               >
                 预约咨询
-              </Link>
+              </button>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
       
-      {/* 导航按钮 */}
+      {/* ... 导航按钮和左右箭头保持不变 ... */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button
@@ -177,7 +248,6 @@ const HeroSlider = () => {
         ))}
       </div>
       
-      {/* 左右箭头 */}
       <button
         className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center text-white"
         onClick={prevSlide}
