@@ -1,0 +1,317 @@
+<!-- DOC医院服务价格表 - 嵌入式代码 -->
+<div id="price-tables-container" class="py-16 relative bg-slate-50">
+  <div class="section-divider mb-12"></div>
+  
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
+        DOC医院价格表
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        透明的收费标准，全程无隐形消费
+      </p>
+    </div>
+    
+    <!-- 标签切换 -->
+    <div class="flex justify-center mb-8 gap-4">
+      <button
+        id="embryo-tab"
+        class="px-8 py-3 rounded-lg text-lg font-medium transition bg-indigo-600 text-white"
+      >
+        胚胎移植和捐卵套餐
+      </button>
+      <button
+        id="self-egg-tab"
+        class="px-8 py-3 rounded-lg text-lg font-medium transition bg-white text-indigo-600 border border-indigo-200"
+      >
+        自卵代孕套餐
+      </button>
+    </div>
+    
+    <!-- 价格表格容器 -->
+    <div id="price-table-container" class="overflow-x-auto shadow-lg rounded-xl mt-6">
+      <!-- 表格将由JavaScript动态生成 -->
+    </div>
+    
+    <!-- 补充说明 -->
+    <div class="mt-10 bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold mb-4 text-gray-800">套餐说明</h3>
+      <ul class="list-disc pl-5 space-y-2 text-gray-600">
+        <li>以上价格单位均为美元，可接受人民币、美元等多种货币付款</li>
+        <li>套餐价格包含吉尔吉斯斯坦当地医疗费用、住宿及基础翻译服务</li>
+        <li>可根据客户实际情况定制专属服务方案</li>
+        <li>价格可能会根据市场变动有所调整，详情请咨询客服</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Tailwind样式精简版 */
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.relative { position: relative; }
+.bg-slate-50 { background-color: #f8fafc; }
+.mb-12 { margin-bottom: 3rem; }
+.container { width: 100%; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.text-center { text-align: center; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.md\:text-5xl { font-size: 3rem; line-height: 1; }
+.font-bold { font-weight: 700; }
+.mb-6 { margin-bottom: 1.5rem; }
+.text-indigo-700 { color: #4338ca; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-gray-600 { color: #4b5563; }
+.max-w-3xl { max-width: 48rem; }
+.flex { display: flex; }
+.justify-center { justify-content: center; }
+.mb-8 { margin-bottom: 2rem; }
+.gap-4 { gap: 1rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.font-medium { font-weight: 500; }
+.transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.bg-indigo-600 { background-color: #4f46e5; }
+.text-white { color: #ffffff; }
+.bg-white { background-color: #ffffff; }
+.text-indigo-600 { color: #4f46e5; }
+.border { border-width: 1px; }
+.border-indigo-200 { border-color: #c7d2fe; }
+.overflow-x-auto { overflow-x: auto; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+.rounded-xl { border-radius: 0.75rem; }
+.mt-6 { margin-top: 1.5rem; }
+.w-full { width: 100%; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.divide-y { border-top-width: 1px; border-bottom-width: 0px; }
+.divide-gray-200 { border-color: #e5e7eb; }
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.from-indigo-600 { --tw-gradient-from: #4f46e5; --tw-gradient-to: rgb(79 70 229 / 0); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.to-indigo-800 { --tw-gradient-to: #3730a3; }
+.text-left { text-align: left; }
+.bg-yellow-100 { background-color: #fef9c3; }
+.whitespace-nowrap { white-space: nowrap; }
+.text-gray-800 { color: #1f2937; }
+.mt-10 { margin-top: 2.5rem; }
+.p-6 { padding: 1.5rem; }
+.list-disc { list-style-type: disc; }
+.pl-5 { padding-left: 1.25rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.text-center { text-align: center; }
+.bg-blue-50 { background-color: #eff6ff; }
+
+/* 动画和特殊效果 */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 5px;
+  background: linear-gradient(to right, #4f46e5, #3730a3);
+  border-radius: 5px;
+}
+</style>
+
+<script>
+(function() {
+  // 初始化变量和数据
+  let activeTab = 'embryo';
+  
+  // 胚胎移植和捐卵套餐数据
+  const embryoPackages = {
+    headers: [
+      '安吉儿 海外医疗服务',
+      '胚胎转运一次移植',
+      '胚胎转运无限移植',
+      '亚裔捐卵包成功',
+      '亚裔捐卵指定性别包成功'
+    ],
+    rows: [
+      {
+        name: '第一笔 意向金',
+        prices: ['$2,000', '$2,000', '$3,000', '$3,000']
+      },
+      {
+        name: '第二笔 确认代孕签约当日',
+        prices: ['$7,500', '$7,500', '$15,000', '$17,000']
+      },
+      {
+        name: '第三笔 移植前三天内',
+        prices: ['$7,500', '$9,000', '$15,000', '$17,000']
+      },
+      {
+        name: '第四笔 HCG验孕成功',
+        prices: ['$7,500', '$9,000', '$10,000', '$15,000']
+      },
+      {
+        name: '第五笔 孕12周',
+        prices: ['$7,500', '$9,000', '$10,000', '$12,000']
+      },
+      {
+        name: '第六笔 孕24周',
+        prices: ['$7,500', '$9,000', '$9,000', '$12,000']
+      },
+      {
+        name: '第七笔 宝宝出生后三天内',
+        prices: ['$7,500', '$9,000', '$10,000', '$12,000']
+      },
+      {
+        name: '总价',
+        prices: ['$47,000', '$54,500', '$72,000', '$88,000']
+      }
+    ]
+  };
+  
+  // 自卵代孕套餐数据
+  const selfEggPackages = {
+    headers: [
+      '安吉儿代孕套餐',
+      '自卵两次移植',
+      '自卵无限次移植',
+      '自卵一次尝试转亚裔捐卵包成功'
+    ],
+    rows: [
+      {
+        name: '第一笔 意向金',
+        prices: [ '$2,000', '$2,000', '$3,000']
+      },
+      {
+        name: '第二笔 签约当日',
+        prices: [ '$15,000', '$15,000', '$15,000']
+      },
+      {
+        name: '第三笔 取卵前三天',
+        prices: [ '$7,500', '$7,500', '$15,000']
+      },
+      {
+        name: '第四笔 自卵无胚胎转捐卵',
+        prices: ['/', '/', '$9,000']
+      },
+      {
+        name: '第五笔 有胚胎后三天内',
+        prices: [ '$5,500', '$5,500', '$10,000']
+      },
+      {
+        name: '第六笔 孕12周',
+        prices: [ '$10,000', '$10,000', '$10,000']
+      },
+      {
+        name: '第七笔 孕24周',
+        prices: [ '$5,000', '$5,000', '$10,000']
+      },
+      {
+        name: '第八笔 宝宝出生后三天内',
+        prices: [ '$10,500', '$12,500', '$10,000']
+      },
+      {
+        name: '总价',
+        prices: [ '$55,500', '$57,500', '$82,000']
+      }
+    ]
+  };
+
+  // DOM加载完成后执行
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取DOM元素
+    const embryoTabButton = document.getElementById('embryo-tab');
+    const selfEggTabButton = document.getElementById('self-egg-tab');
+    const tableContainer = document.getElementById('price-table-container');
+    
+    // 绑定标签点击事件
+    embryoTabButton.addEventListener('click', function() {
+      switchTab('embryo');
+    });
+    
+    selfEggTabButton.addEventListener('click', function() {
+      switchTab('self-egg');
+    });
+    
+    // 初始化显示胚胎移植表格
+    renderTable(embryoPackages);
+    
+    // 切换标签函数
+    function switchTab(tab) {
+      activeTab = tab;
+      
+      // 更新按钮样式
+      if (tab === 'embryo') {
+        embryoTabButton.className = 'px-8 py-3 rounded-lg text-lg font-medium transition bg-indigo-600 text-white';
+        selfEggTabButton.className = 'px-8 py-3 rounded-lg text-lg font-medium transition bg-white text-indigo-600 border border-indigo-200';
+        renderTable(embryoPackages);
+      } else {
+        embryoTabButton.className = 'px-8 py-3 rounded-lg text-lg font-medium transition bg-white text-indigo-600 border border-indigo-200';
+        selfEggTabButton.className = 'px-8 py-3 rounded-lg text-lg font-medium transition bg-indigo-600 text-white';
+        renderTable(selfEggPackages);
+      }
+    }
+    
+    // 渲染表格函数
+    function renderTable(packageData) {
+      tableContainer.innerHTML = '';
+      
+      const table = document.createElement('table');
+      table.className = 'w-full text-sm divide-y divide-gray-200 border fade-in';
+      
+      // 创建表头
+      const thead = document.createElement('thead');
+      thead.className = 'bg-gradient-to-r from-indigo-600 to-indigo-800';
+      
+      const headerRow = document.createElement('tr');
+      packageData.headers.forEach((header, index) => {
+        const th = document.createElement('th');
+        th.className = `px-4 py-4 text-white font-semibold text-sm text-center ${index === 0 ? 'text-left' : ''}`;
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+      
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+      
+      // 创建表体
+      const tbody = document.createElement('tbody');
+      tbody.className = 'bg-white divide-y divide-gray-200';
+      
+      packageData.rows.forEach((row) => {
+        const tr = document.createElement('tr');
+        if (row.name.includes('总价')) {
+          tr.className = 'bg-yellow-100 font-bold';
+        }
+        
+        // 添加名称单元格
+        const tdName = document.createElement('td');
+        tdName.className = 'px-4 py-4 whitespace-nowrap text-gray-800';
+        tdName.textContent = row.name;
+        tr.appendChild(tdName);
+        
+        // 添加价格单元格
+        row.prices.forEach((price) => {
+          const tdPrice = document.createElement('td');
+          tdPrice.className = 'px-4 py-4 whitespace-nowrap text-center text-gray-800';
+          tdPrice.textContent = price;
+          tr.appendChild(tdPrice);
+        });
+        
+        tbody.appendChild(tr);
+      });
+      
+      table.appendChild(tbody);
+      tableContainer.appendChild(table);
+    }
+  });
+})();
+</script>

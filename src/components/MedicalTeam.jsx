@@ -162,6 +162,122 @@ const MedicalTeam = () => {
         "2022年5月：临床胚胎学基础与辅助生殖技术培训"
       ],
       languages: "吉尔吉斯语（母语）、俄语、土耳其语、英语（流利）"
+    },
+    {
+      name: "杨志鸿",
+      title: "教授 博士生导师 TANG首席",
+      specialty: "TANG辅助生殖技术、胚胎植入前遗传学检测、延时胚胎学",
+      experience: "30年",
+      avatar: "https://photo.171006.xyz/image32.jpeg",
+      achievements: "国际生殖遗传学会（ISRG）联合创始人兼秘书长，国际胚胎植入前遗传学诊断学会（PGDIS）联合主席",
+      skills: [
+        "胚胎植入前非整倍体遗传学检测（PGT-A）",
+        "延时胚胎学（TL）临床研究",
+        "全染色体PGT-T技术",
+        "Time-lapse和PGT-A技术联合应用",
+        "男科学、胚胎学和内分泌学"
+      ],
+      experienceList: [
+        "美国匹兹堡大学医学院全职临床教授",
+        "匹兹堡大学医学中心（GPMC）男科学、胚胎学和内分泌学实验室主任",
+        "《辅助生殖与遗传学》杂志（JARG）编委"
+      ],
+      education: [
+        "在美国和加拿大辅助生殖技术领域学习和工作超过30年"
+      ],
+      training: [
+        "2012年发表了全球首个全染色体PGT-T的前瞻性抽样临床研究",
+        "2014年率先发表了全球首个Time-lapse和PGT-A技术联合应用的随机抽样临床研究"
+      ],
+      languages: "中文、英文"
+    },
+    {
+      name: "李波",
+      title: "医学硕士、副主任医生",
+      specialty: "TANG体外受精-胚胎移植技术、促排卵治疗、生殖内分泌调控",
+      experience: "20年",
+      avatar: "https://photo.171006.xyz/image33.jpeg",
+      achievements: "发表SCI论文4篇，国家级期刊论文12篇，荣获省级及市级科学技术奖共4项",
+      skills: [
+        "体外受精-胚胎移植技术临床治疗",
+        "促排卵治疗",
+        "生殖内分泌调控",
+        "辅助生殖相关并发症处理",
+        "多胎妊娠减胎术",
+        "生殖科子宫附件疾病相关宫、腹腔镜手术"
+      ],
+      experienceList: [
+        "国内三甲医院生殖中心工作20余年",
+        "掌握体外受精胚胎移植治疗流程各个环节",
+        "从病人筛选评估到控制性促排卵、取卵、胚胎移植、移植后黄体支持等全流程"
+      ],
+      education: [
+        "山东大学硕士研究生学历"
+      ],
+      training: [
+        "主持省级、市级课题研究各2项",
+        "熟练掌握生殖科子宫附件疾病相关宫、腹腔镜手术操作"
+      ],
+      languages: "中文"
+    },
+    {
+      name: "陈双全",
+      title: "医学硕士",
+      specialty: "TANG胚胎实验室技术、精液处理、单精子注射、胚胎培养",
+      experience: "10年",
+      avatar: "https://photo.171006.xyz/image34.jpeg",
+      achievements: "公司雪藏的胚胎实验室技术顶梁柱之一",
+      skills: [
+        "胚胎实验室质控",
+        "精液处理",
+        "单精子注射",
+        "胚胎培养",
+        "胚胎活检",
+        "胚胎实验室技术管理"
+      ],
+      experienceList: [
+        "中国三甲医院生殖中心胚胎实验室10余年胚胎师experienced",
+        "在胚胎实验室质控、精液处理、单精子注射、胚胎培养、胚胎活检等胚胎实验室技术方面有非常丰富的经验"
+      ],
+      education: [
+        "生殖遗传学硕士学位"
+      ],
+      training: [
+        "胚胎实验室技术专业培训",
+        "单精子注射技术培训"
+      ],
+      languages: "中文"
+    },
+    {
+      name: "马克",
+      title: "医学博士",
+      specialty: "TANG妇产科、生殖技术临床、紧急产科护理",
+      experience: "25年",
+      avatar: "https://photo.171006.xyz/image35.png",
+      achievements: "吉尔吉斯斯坦国立医学院妇产科主任，国家妇幼保健中心副主任",
+      skills: [
+        "妇产科临床工作",
+        "生殖技术临床",
+        "紧急产科护理(EOC)",
+        "有效的围产期护理",
+        "安全母性项目",
+        "妇产科典型手术技术"
+      ],
+      experienceList: [
+        "吉尔吉斯斯坦国立医学院妇产科主任",
+        "国家妇幼保健中心副主任兼吉尔吉斯国立医学院主任",
+        "吉尔吉斯斯坦国立医学院第一妇产科副教授兼生殖中心主任",
+        "中亚健康计划紧急产科护理(EOC)临床方案工作组，教练",
+        "'有效的围产期护理'和'安全母性'项目，国家级教练员"
+      ],
+      education: [
+        "吉尔吉斯斯坦国立医学院医学博士"
+      ],
+      training: [
+        "'妇产科典型手术和提供紧急产科护理的外科手术技术特点'课程教练",
+        "从事妇产与生殖技术临床工作25年"
+      ],
+      languages: "吉尔吉斯语、俄语"
     }
   ];
 
@@ -195,7 +311,7 @@ const MedicalTeam = () => {
           <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-1 justify-center mb-8">
             {[
               {
-                src: "https://photo.171006.xyz/微信截图_20250429111356.webp",
+                src: "https://photo.171006.xyz/微信图片_20250304134952.webp",
                 alt: "吉尔吉斯代孕合作医院DOC医院照片1"
               },
               {
@@ -275,12 +391,13 @@ const MedicalTeam = () => {
         </div>
         {/* 唐IVF Center 医院介绍 */}
         <div className="bg-slate-50 rounded-2xl p-8 mb-16 shadow-lg">
-          <h3 className="text-2xl font-bold text-red-700 mb-4 flex items-center justify-center">
-            <img src="https://photo.171006.xyz/微信图片_20250522093113.png" alt="吉尔吉斯代孕合作医院唐IVF Center LOGO" className="h-10 mr-4" />
-            唐IVF Center
-          </h3>
+          <div className="flex flex-col items-center mb-4">
+            <img src="https://photo.171006.xyz/微信图片_20250522093113.png" alt="吉尔吉斯代孕合作医院唐IVF Center LOGO" className="h-24" />
+            <p className="text-lg font-semibold text-red-700 mb-2">--------------------- </p>
+            <h3 className="text-2xl font-bold text-red-800 mb-2">   唐IVF Center</h3>
+          </div>
           {/* 图片区域 */}
-          <div className="grid grid-cols-2 gap-2 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center mb-8">
             {[
               {
                 src: "https://photo.171006.xyz/chrome_yfJWvPSK4R.png",
@@ -289,11 +406,20 @@ const MedicalTeam = () => {
               {
                 src: "https://photo.171006.xyz/chrome_B7N0CJG9Kg.png",
                 alt: "吉尔吉斯代孕合作医院唐IVF医院照片2"
+              },
+              {
+                src: "https://photo.171006.xyz/image19.png",
+                alt: "吉尔吉斯代孕合作医院唐IVF医院照片3"
+              },
+              {
+                src: "https://photo.171006.xyz/image29.png",
+                alt: "吉尔吉斯代孕合作医院唐IVF医院照片4"
               }
             ].map((img, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl shadow overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl h-40 flex items-center"
+                className="bg-white rounded-2xl shadow overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl h-52 flex items-center cursor-pointer"
+                onClick={() => setEnlargedImage(img)}
               >
                 <img
                   src={img.src}
@@ -303,13 +429,14 @@ const MedicalTeam = () => {
               </div>
             ))}
           </div>
+          {/* 医院简介 */}
+          <div className="text-center mb-8">
+            <p className="text-lg font-semibold text-red-700">中国辅助生殖新典范，专注高端IVF技术与国际化服务</p>
+            <p className="text-base text-gray-700 mt-2">唐IVF Center 坐落于中国某大都市核心地段，是一家融合前沿科技与人文关怀的现代化辅助生殖专科医院。医院配备国际一流的胚胎实验室与IVF手术室，致力于为全球患者提供精准、安全、高成功率的辅助生殖解决方案。</p>
+          </div>
+
           {/* 现代化分区块展示 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {/* 简介 */}
-            <div className="bg-white rounded-2xl shadow p-6 flex flex-col md:col-span-2">
-              <p className="text-lg font-semibold text-red-700 mb-2">中国辅助生殖新典范，专注高端IVF技术与国际化服务</p>
-              <p className="text-base text-gray-700">唐IVF Center 坐落于中国某大都市核心地段，是一家融合前沿科技与人文关怀的现代化辅助生殖专科医院。医院配备国际一流的胚胎实验室与IVF手术室，致力于为全球患者提供精准、安全、高成功率的辅助生殖解决方案。</p>
-            </div>
             {/* 核心特色 */}
             <div className="bg-white rounded-2xl shadow p-6 flex flex-col">
               <h4 className="font-bold text-red-700 mb-2">核心特色</h4>

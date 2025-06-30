@@ -75,12 +75,104 @@ const PricePackages = () => {
     ]
   };
   
+  // DOC医院 - 胚胎移植和捐卵套餐价格
+  const docEmbryoPackages = {
+    headers: [
+      '安吉儿 海外医疗服务',
+      '胚胎转运一次移植',
+      '胚胎转运无限移植', 
+      '亚裔捐卵包成功',
+      '亚裔捐卵指定性别包成功'
+    ],
+    rows: [
+      {
+        name: '第一笔 意向金',
+        prices: [2000, 2000, 3000, 3000]
+      },
+      {
+        name: '第二笔 确认代孕签约当日',
+        prices: [7500, 7500, 15000, 17000]
+      },
+      {
+        name: '第三笔 移植前三天内',
+        prices: [7500, 9000, 15000, 17000]
+      },
+      {
+        name: '第四笔 HCG验孕成功',
+        prices: [7500, 9000, 10000, 15000]
+      },
+      {
+        name: '第五笔 孕12周',
+        prices: [7500, 9000, 10000, 12000]
+      },
+      {
+        name: '第六笔 孕24周',
+        prices: [7500, 9000, 9000, 12000]
+      },
+      {
+        name: '第七笔 宝宝出生后三天内',
+        prices: [7500, 9000, 10000, 12000]
+      },
+      {
+        name: '项目总金额',
+        prices: [47000, 54500, 72000, 88000]
+      }
+    ]
+  };
+  
+  // DOC医院 - 自卵代孕套餐价格
+  const docSelfEggPackages = {
+    headers: [
+      '安吉儿代孕套餐',
+      '自卵两次移植',
+      '自卵无限次移植',
+      '自卵一次尝试转亚裔捐卵包成功'
+    ],
+    rows: [
+      {
+        name: '第一笔 意向金',
+        prices: [2000, 2000, 3000]
+      },
+      {
+        name: '第二笔 签约当日',
+        prices: [15000, 15000, 15000]
+      },
+      {
+        name: '第三笔 取卵前三天',
+        prices: [7500, 7500, 15000]
+      },
+      {
+        name: '第四笔 自卵无胚胎转捐卵',
+        prices: [0, 0, 9000]
+      },
+      {
+        name: '第五笔 有胚胎后三天内',
+        prices: [5500, 5500, 10000]
+      },
+      {
+        name: '第六笔 孕12周',
+        prices: [10000, 10000, 10000]
+      },
+      {
+        name: '第七笔 孕24周',
+        prices: [5000, 5000, 10000]
+      },
+      {
+        name: '第八笔 宝宝出生后三天内',
+        prices: [10500, 12500, 10000]
+      },
+      {
+        name: '项目总金额',
+        prices: [55500, 57500, 82000]
+      }
+    ]
+  };
+  
   // 切换标签的处理函数
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
   
-  // 显示价格表格
   // 显示价格表格
   const renderTable = (packageData) => (
     <div className="mt-6">
@@ -166,10 +258,10 @@ const PricePackages = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-indigo-700">
-            唐IVF 服务套餐价格
+            医疗服务套餐价格
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            透明的收费标准，全程无隐形消费
+            唐IVF与DOC医院透明收费标准，全程无隐形消费
           </p>
         </motion.div>
         
@@ -183,7 +275,7 @@ const PricePackages = () => {
             }`}
             onClick={() => handleTabChange('ivf')}
           >
-            试管婴儿套餐
+            唐IVF试管婴儿
           </button>
           <button
             className={`px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-medium transition ${
@@ -193,12 +285,45 @@ const PricePackages = () => {
             }`}
             onClick={() => handleTabChange('surrogacy')}
           >
-            代孕套餐
+            唐IVF代孕套餐
+          </button>
+          <button
+            className={`px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-medium transition ${
+              activeTab === 'doc-embryo' 
+                ? 'bg-indigo-600 text-white' 
+                : 'bg-white text-indigo-600 border border-indigo-200'
+            }`}
+            onClick={() => handleTabChange('doc-embryo')}
+          >
+            DOC胚胎移植
+          </button>
+          <button
+            className={`px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-medium transition ${
+              activeTab === 'doc-self-egg' 
+                ? 'bg-indigo-600 text-white' 
+                : 'bg-white text-indigo-600 border border-indigo-200'
+            }`}
+            onClick={() => handleTabChange('doc-self-egg')}
+          >
+            DOC自卵代孕
           </button>
         </div>
         
         {/* 价格表格 */}
-        {activeTab === 'ivf' ? renderTable(ivfPackages) : renderTable(surrogacyPackages)}
+        {(() => {
+          switch(activeTab) {
+            case 'ivf':
+              return renderTable(ivfPackages);
+            case 'surrogacy':
+              return renderTable(surrogacyPackages);
+            case 'doc-embryo':
+              return renderTable(docEmbryoPackages);
+            case 'doc-self-egg':
+              return renderTable(docSelfEggPackages);
+            default:
+              return renderTable(ivfPackages);
+          }
+        })()}
         
         {/* 补充说明 */}
         <div className="mt-10 bg-white p-4 sm:p-6 rounded-lg shadow-md">
@@ -209,6 +334,8 @@ const PricePackages = () => {
             <li>所有套餐均由中国医生亲自操作，确保医疗质量</li>
             <li>代孕套餐包含代孕妈妈招募、筛选、合约等全流程服务</li>
             <li>客户可根据实际需求选择合适的套餐，我们提供定制服务</li>
+            <li>DOC医院套餐可根据客户实际情况定制专属服务方案</li>
+            <li>价格可能会根据市场变动有所调整，详情请咨询客服</li>
           </ul>
         </div>
       </div>

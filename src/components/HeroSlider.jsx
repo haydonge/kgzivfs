@@ -39,8 +39,10 @@ const HeroSlider = () => {
       subtitle: "高性价比选择",
       description: "我们严格筛选20-28岁健康卵妹，所有卵妹均经过全面体检（包括遗传病史、生育能力评估）、心理评估和背景调查。提供卵子基因检测、冷冻保存、运输和移植全流程服务，多种方案可选。每位卵妹不超过3次捐卵，确保卵子质量和健康。",
       image: "hero-slide-4.jpg",
+
       btnText: "咨询详情",
-      targetSection: "services"
+      targetSection: "https://donor.kgzivf.com",  // 修改为外部链接
+      isExternalLink: true  // 添加标识符
     },
     {
       id: 5,
@@ -215,14 +217,26 @@ const HeroSlider = () => {
             </p>
             
             <div className="flex flex-wrap gap-6">
-              <Link
-                to={slides[current].targetSection} /* ... */
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors cursor-pointer"
-              >
-                {slides[current].btnText} 
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              {/* 修改按钮，移除 formsappId，添加 onClick 事件 */}
+              {slides[current].isExternalLink ? (
+                <a
+                  href={slides[current].targetSection}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors cursor-pointer"
+                >
+                  {slides[current].btnText} 
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              ) : (
+                <Link
+                  to={slides[current].targetSection}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium flex items-center transition-colors cursor-pointer"
+                >
+                  {slides[current].btnText} 
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              )}
+              {/* 预约咨询按钮保持不变 */}
               <button 
                 onClick={handleOpenForm} 
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-medium transition-colors cursor-pointer"
