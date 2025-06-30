@@ -9,6 +9,11 @@ export default defineConfig({
     host: true,
     port: 3000
   },
+  preview: {
+    host: true,
+    port: 3000,
+    allowedHosts: ['fuzhu.kgzivf.com']
+  },
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
     alias: {
