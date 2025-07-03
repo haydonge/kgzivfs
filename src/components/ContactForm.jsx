@@ -8,8 +8,7 @@ const ContactForm = () => {
   
   // 联系信息数据
   const contactInfo = {
-    address: "江苏省昆山市紫竹路699号",
-    phone: "+86 13912655230",
+       phone: "+86 13912655230",
     email: "fuzhushengzhi@gmail.com",
     workingHours: "周一至周五: 9:00 - 18:00"
   };
